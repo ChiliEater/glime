@@ -1,3 +1,3 @@
-# celeste
+# Glime
 
-2021.2.10f1
+Unity Editor version 2021.2.15f1
