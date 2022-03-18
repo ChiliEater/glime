@@ -89,7 +89,7 @@ public class DebugOutput : MonoBehaviour
     {
         ElapsedTime += Time.deltaTime;
         DebugText.text = "";
-        DebugText.text += "Grounded: " + Controller.m_Grounded.ToString();
+        DebugText.text += "Grounded: " + Controller.Grounded.ToString();
         DebugText.text += "\nJump: " + JumpState;
         DebugText.text += "\nTime: " + ElapsedTime.ToString();
         DebugText.text += "\nH-Spd: " + Rigidbody.velocity.x;
