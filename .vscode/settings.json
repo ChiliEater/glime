@@ -14,6 +14,7 @@
         "**/*.unityproj": true,
         "**/*.csproj": true,
         "**/*.sln": true,
-        "[Tt]emp/": true
+        "[Tt]emp/": true,
+        "[Ll]ibrary/": true
     }
 }
