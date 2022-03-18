@@ -6,17 +6,35 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/// <summary>
+/// Provides the functionality to control the player.
+/// </summary>
 public class PlayerController : MonoBehaviour
-{   
-    // Amount of force added when the player jumps.
-    [SerializeField] private float m_JumpForce = 400f;
-    // How many ticks a jump can last. Physics run at 50 TPS
+{
+    /// <summary>
+    /// The amount of force added when the player jumps.
+    /// </summary>
+    [SerializeField]
+    private float jumpForce = 400f;
+
+    /// <summary>
+    /// How many ticks a jump can last. Physics run at 50 TPS.
+    /// </summary>
     [SerializeField] private int m_MaxJumpDuration;
-    // Amount of maxSpeed applied to crouching movement. 1 = 100%
-    [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;
-    // How much to smooth out the movement
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
-    // Whether or not a player can steer while jumping
+
+    /// <summary>
+    /// Amount of maxSpeed applied to crouching movement.
+    /// </summary>
+    [Range(0, 1)][SerializeField] private float m_CrouchSpeed = .36f;
+
+    /// <summary>
+    /// How much to smooth out the movement.
+    /// </summary>
+    [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;
+
+    /// <summary>
+    /// A value indicating whether a player can steer while jumping.
+    /// </summary>
     [SerializeField] private bool m_AirControl = true;
     // A mask determining what is ground to the character
     [SerializeField] private LayerMask m_WhatIsGround;
@@ -59,7 +77,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject DebugUI;
     private TextMeshProUGUI DebugText;
     private float AerialTime;
-    
+
 
     void Awake()
     {
@@ -129,7 +147,8 @@ public class PlayerController : MonoBehaviour
                 // Disable one of the colliders when crouching
                 if (m_CrouchDisableCollider != null)
                     m_CrouchDisableCollider.enabled = false;
-            } else
+            }
+            else
             {
                 // Enable the collider when not crouching
                 if (m_CrouchDisableCollider != null)
@@ -165,9 +184,9 @@ public class PlayerController : MonoBehaviour
                 AerialTime += Time.fixedDeltaTime;
                 DebugText.text = "Airtime: " + AerialTime.ToString();
                 DebugText.text += "\nCurrent Jump: " + m_CurrentJumpDuration;
-                DebugText.text += "\n" + (m_JumpForce / m_CurrentJumpDuration).ToString();
+                DebugText.text += "\n" + (jumpForce / m_CurrentJumpDuration).ToString();
             }
-                
+
         }
         // If the player should jump...
         if (jump && m_MaxJumpDuration >= m_CurrentJumpDuration)
@@ -178,7 +197,7 @@ public class PlayerController : MonoBehaviour
                 return;
             }
             // Add a vertical force to the player.
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce / m_CurrentJumpDuration));
+            m_Rigidbody2D.AddForce(new Vector2(0f, jumpForce / m_CurrentJumpDuration));
             m_CurrentJumpDuration++;
         }
     }
