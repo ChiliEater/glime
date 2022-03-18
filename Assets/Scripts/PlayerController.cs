@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
     private bool m_FacingRight = true;
     private Vector3 m_Velocity = Vector3.zero;
     //
-    private int m_CurrentJumpDuration = 0;
+    private int m_CurrentJumpDuration = 1;
     // Lock for preventing auto-jump
     private bool JumpLocked = false;
 
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
     [Space]
 
     [SerializeField] private GameObject DebugUI;
-    private Text DebugText;
+    private TextMeshProUGUI DebugText;
     private float AerialTime;
     
 
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
         // Setup debug variable
-        DebugText = DebugUI.GetComponent<Text>();
+        DebugText = DebugUI.GetComponent<TextMeshProUGUI>();
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
 
     [SerializeField] private GameObject DebugUI;
-    private TextMeshPro DebugText;
+    private TextMeshProUGUI DebugText;
 
 
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         inputBuffer = new ConcurrentStack<Input>();
         controller.GetComponent<PlayerController>();
-        DebugText = DebugUI.GetComponent<TextMeshPro>();
+        DebugText = DebugUI.GetComponent<TextMeshProUGUI>();
         moveAction.Enable();
         jumpAction.Enable();
     }
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Debug
-        DebugText.Text = "Jump Action: " + isJump;
+        DebugText.text = "Jump Action: " + isJump;
     }
 
     void FixedUpdate()
