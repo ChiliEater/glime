@@ -3,25 +3,31 @@
 /// </summary>
 public class Input
 {
-    public enum Type { JUMP, DASH };
-    
-    private int age;
-    public int Age
-    { get; }
+    /// <summary>
+    /// Gets the age of the input.
+    /// </summary>
+    public int Age { get; protected set; }
 
-    private Type inputType;
-    public Type InputType
-    { get; set; }
+    /// <summary>
+    /// Gets or sets the type of the input.
+    /// </summary>
+    public InputType InputType { get; set; }
 
-
-    public Input(Type type)
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Input"/> class.
+    /// </summary>
+    /// <param name="type">The type of the input.</param>
+    public Input(InputType type)
     {
-        age = 0;
-        inputType = type;
+        Age = 0;
+        InputType = type;
     }
 
-    public void incrementAge()
+    /// <summary>
+    /// Increments the age of the input.
+    /// </summary>
+    public void IncrementAge()
     {
-        age++;
+        Age++;
     }
 }
