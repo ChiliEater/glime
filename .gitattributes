@@ -66,6 +66,11 @@
 *.afphoto lfs
 *.afdesign lfs
 *.aseprite lfs
+*.pdf lfs
+*.ttf lfs
+*.otf lfs
+*.woff lfs
+*.woff2 lfs
 # Audio
 *.mp3 lfs
 *.ogg lfs
