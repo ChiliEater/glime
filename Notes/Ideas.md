@@ -1,2 +1,24 @@
 # Ideas
-Personality potion/bartender game
+
+- Personality potion/bartender game
+- Roguelike as bottle
+  - Bottle as character
+    - Time based
+    - Dynamic weapon based on enemy blood
+      - Type effectivness
+      - Rock-Paper-Scissors system
+      - Behaviour based on effectiveness
+    - Puzzle game
+      - Complete level with specific
+      - Multiple types
+      - Musical notes based on potion quality
+    - Potion on inside
+      - Leakage when too fast
+    - Plastic bottle
+      - Health is acid
+      - Speedrunners-like?
+      - Platformer
+      - Autorunner?
+    - Potion racer
+- Coop puzzler with different potions per player
+- Cross-dimensional potions
