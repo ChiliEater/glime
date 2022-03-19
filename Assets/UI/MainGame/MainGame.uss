@@ -1,3 +1,60 @@
 #TopBar > .button {
     height: 30px;
+    border-bottom-left-radius: var(--default-radius);
+    border-bottom-right-radius: var(--default-radius);
+    margin-top: 0;
+    margin-bottom: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#TopBar {
+    background-color: var(--background-pane-color);
+}
+
+
+// Posion Craft
+.button {
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-text-align: lower-center;
+}
+
+#RoundPane * {
+    font-size: 40px;
+}
+
+#IngredientPane .button {
+    width: 75px;
+}
+
+#SettingsBar .button {
+    width: 75px;
+}
+
+.pane {
+    background-color: var(--background-pane-color);
+}
+
+
+// Battle UI
+.pane {
+    background-color: var(--background-pane-color);
+}
+
+#ShelfPane > .unity-button {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    -unity-text-align: lower-left;
+    height: 80%;
+}
+
+#ShelfPane {
+    width: 200px;
+    height: 50px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 0;
 }
