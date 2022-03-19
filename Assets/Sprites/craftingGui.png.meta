@@ -431,7 +431,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crafting_tab
+      name: craftingTab
       rect:
         serializedVersion: 2
         x: 112
@@ -452,7 +452,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: combat_tab
+      name: combatTab
       rect:
         serializedVersion: 2
         x: 160
@@ -490,14 +490,14 @@ TextureImporter:
       herb00: 1281738408
       time: 836645370
       herb11: -886784796
+      combatTab: -390160264
       herb10: 1595153199
       potion2: 1706282215
+      craftingTab: 1662706222
       potion1: 848670489
       herb12: 1159111569
       herb01: 14162953
-      combat_tab: -390160264
       herb02: -173543916
-      crafting_tab: 1662706222
       settings: -1527349027
       turns: 1971259686
   spritePackingTag: 

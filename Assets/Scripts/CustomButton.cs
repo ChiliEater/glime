@@ -35,7 +35,6 @@ public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     [SerializeField]
     private Sprite downSprite;
 
-
     /// <summary>
     /// An event which is triggered on click release.
     /// </summary>
@@ -43,8 +42,10 @@ public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     [Space]
     public UnityEvent onClickEvent;
 
+
     public void Start()
     {
+        BoxCollider2D boxCollider2D = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalSprite = spriteRenderer.sprite;
 
