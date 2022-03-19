@@ -1,0 +1,5 @@
+
+:root {
+    --background-pane-color: rgb(87, 87, 87);
+    --default-radius: 7px;
+}
