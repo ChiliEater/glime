@@ -9,11 +9,16 @@ namespace CodeBrewery.Glime.Battle
     public class EncounterManager : MonoBehaviour
     {
         Participant Player { get; set; }
-        Enemy[] Enemies { get; set; }
+        public Enemy[] Enemies { get; private set; }
 
         public Vector3 EnemyTarget;
 
         public int EnemyCount;
+
+        public void Start()
+        {
+            Enemies = GetComponentsInChildren<Enemy>();
+        }
 
         public void StartTurn()
         {
