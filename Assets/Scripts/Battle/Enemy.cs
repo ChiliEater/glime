@@ -7,6 +7,7 @@ namespace CodeBrewery.Glime.Battle
     /// <summary>
     /// Represents an enemy.
     /// </summary>
+    [RequireComponent(typeof(NavMeshAgent))]
     public class Enemy : Participant
     {
         /// <summary>
