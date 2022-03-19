@@ -1,6 +1,0 @@
-@import url("theme.tss");
-@import url("unity-theme://default");
-
-
-
-VisualElement {}
