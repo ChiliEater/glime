@@ -27,9 +27,5 @@ namespace CodeBrewery.Glime.Battle
                 enemy.TurnStarts(this);
             }
         }
-
-        public void SpawnEnemies()
-        {
-        }
     }
 }
