@@ -14,7 +14,7 @@ namespace CodeBrewery.Glime
         private VisualElement craftingUI;
         private VisualElement battleUI;
 
-        async void Start()
+        void Start()
         {
             uIDocument = GetComponent<UIDocument>();
             VisualElement rootEl = this.uIDocument.rootVisualElement;
