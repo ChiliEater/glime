@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CodeBrewery.Glime.Battle
 {
@@ -11,9 +13,13 @@ namespace CodeBrewery.Glime.Battle
         Participant Player { get; set; }
         public Enemy[] Enemies { get; private set; }
 
+        private List<Enemy> enemiesCurrentlyInTurn = new List<Enemy>();
+
         public Vector3 EnemyTarget;
 
         public int EnemyCount;
+
+        public UnityEvent OnTurnStoppedEvent;
 
         public void Start()
         {
@@ -22,9 +28,20 @@ namespace CodeBrewery.Glime.Battle
 
         public void StartTurn()
         {
+            enemiesCurrentlyInTurn.Clear();
+            enemiesCurrentlyInTurn.AddRange(Enemies);
             foreach (var enemy in Enemies)
             {
                 enemy.TurnStarts(this);
+            }
+        }
+
+        public void StopTurn(Enemy enemy)
+        {
+            enemiesCurrentlyInTurn.Remove(enemy);
+            if(enemiesCurrentlyInTurn.Count == 0)
+            {
+                OnTurnStoppedEvent.Invoke();
             }
         }
     }
