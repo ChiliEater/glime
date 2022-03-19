@@ -2,13 +2,14 @@
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 namespace CodeBrewery.Glime.Battle.Potions
 {
     /// <summary>
     /// Represents a list of ingredients.
     /// </summary>
-    public class IngredientList : IReadOnlyDictionary<PotionType, int>
+    public class PotionTypeList : IReadOnlyDictionary<PotionType, int>
     {
         /// <summary>
         /// The actual list of ingredients.
@@ -16,10 +17,19 @@ namespace CodeBrewery.Glime.Battle.Potions
         private Dictionary<PotionType, int> innerList = new Dictionary<PotionType, int>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="IngredientList"/> class.
+        /// Initializes a new instance of the <see cref="PotionTypeList"/> class.
         /// </summary>
-        public IngredientList()
+        public PotionTypeList()
         {
+        }
+
+        public PotionTypeList(params IEnumerable<KeyValuePair<PotionType, int>>[] potionTypes)
+        {
+            foreach (IEnumerable<KeyValuePair<PotionType, int>> potionTypeList in potionTypes)
+            {
+                AddIngredients(potionTypeList);
+
+            }
         }
 
         /// <inheritdoc/>
@@ -43,7 +53,7 @@ namespace CodeBrewery.Glime.Battle.Potions
         /// Adds the specified <paramref name="potion"/> to the list.
         /// </summary>
         /// <param name="potion">The potion-type to add to the list.</param>
-        public void AddIngredients(PotionType potion)
+        protected void AddIngredients(PotionType potion)
         {
             AddIngredients(potion, 1);
         }
@@ -53,16 +63,16 @@ namespace CodeBrewery.Glime.Battle.Potions
         /// </summary>
         /// <param name="potion">The potion-type to add to the list.</param>
         /// <param name="count">The number of potions to add to the list.</param>
-        public void AddIngredients(PotionType potion, int count)
+        protected void AddIngredients(PotionType potion, int count)
         {
             innerList[potion] = (ContainsKey(potion) ? this[potion] : 0) + count;
         }
 
         /// <summary>
-        /// Adds the specified <see cref="IngredientList"/> to this list.
+        /// Adds the specified <see cref="PotionTypeList"/> to this list.
         /// </summary>
         /// <param name="list">The list containing the ingredients to add.</param>
-        public void AddIngredients(IngredientList list)
+        protected void AddIngredients(IEnumerable<KeyValuePair<PotionType, int>> list)
         {
             foreach (KeyValuePair<PotionType, int> entry in list)
             {
@@ -94,5 +104,23 @@ namespace CodeBrewery.Glime.Battle.Potions
         {
             return innerList.GetEnumerator();
         }
+
+        public class PotionTypeListBuilder
+        {
+            private PotionTypeList list = new PotionTypeList();
+
+            public PotionTypeListBuilder AddIngredient(PotionType type, int count)
+            {
+                list.AddIngredients(type, count);
+                return this;
+            }
+
+            public PotionTypeList Build()
+            {
+                return list;
+            }
+
+        }
+
     }
 }
