@@ -7,5 +7,7 @@ namespace CodeBrewery.Glime.Battle
     /// </summary>
     class EncounterManager : MonoBehaviour
     {
+        Participant Player { get; set; }
+        Enemy[] Enemies { get; set; }
     }
 }
