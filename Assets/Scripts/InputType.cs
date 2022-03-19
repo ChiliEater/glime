@@ -1,15 +1,18 @@
-/// <summary>
-/// Represents an input-type.
-/// </summary>
-public enum InputType
+namespace CodeBrewery.Glime
 {
     /// <summary>
-    /// Indicates a jump.
+    /// Represents an input-type.
     /// </summary>
-    JUMP,
+    public enum InputType
+    {
+        /// <summary>
+        /// Indicates a jump.
+        /// </summary>
+        JUMP,
 
-    /// <summary>
-    /// Indicates a dash.
-    /// </summary>
-    DASH
+        /// <summary>
+        /// Indicates a dash.
+        /// </summary>
+        DASH
+    }
 }
