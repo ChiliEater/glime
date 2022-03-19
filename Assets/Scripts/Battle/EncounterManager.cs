@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CodeBrewery.Glime.Battle
@@ -10,7 +11,9 @@ namespace CodeBrewery.Glime.Battle
         Participant Player { get; set; }
         Enemy[] Enemies { get; set; }
 
-        public Vector3 EnemyTarget { get; set; }
+        public Vector3 EnemyTarget;
+
+        public int EnemyCount;
 
         public void StartTurn()
         {
@@ -18,6 +21,10 @@ namespace CodeBrewery.Glime.Battle
             {
                 enemy.TurnStarts(this);
             }
+        }
+
+        public void SpawnEnemies()
+        {
         }
     }
 }

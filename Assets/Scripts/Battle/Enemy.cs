@@ -32,6 +32,7 @@ namespace CodeBrewery.Glime.Battle
 
         private Vector3 lastPosition;
 
+
         /// <summary>
         /// Initializes the enemy.
         /// </summary>
