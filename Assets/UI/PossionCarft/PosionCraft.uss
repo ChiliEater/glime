@@ -1,0 +1,20 @@
+VisualElement {
+    font: url('project://database/Assets/TextMesh%20Pro/Fonts/Minecraftia-Regular.ttf?fileID=12800000&guid=246c65584c415474b8d49c7fb669cc3e&type=3#Minecraftia-Regular');
+}
+
+.button {
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-text-align: lower-center;
+}
+
+#RoundPane * {
+    font-size: 40px;
+}
+
+#IngredientPane .button {
+    width: 75px;
+}
+
+#SettingsBar .button {
+    width: 75px;
+}
