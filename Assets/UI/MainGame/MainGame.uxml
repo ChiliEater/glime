@@ -26,7 +26,7 @@
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="SettingsBar" class="pane" style="height: 15%; flex-direction: row;">
+                <ui:VisualElement name="SettingsBar" class="pane" style="height: 75px; flex-direction: row;">
                     <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsBtn" class="button" style="background-image: url(&apos;project://database/Assets/Sprites/Icons/Misc/Gear.png?fileID=21300000&amp;guid=042fae2dd68bce044b8fbd1f26724a2d&amp;type=3#Gear&apos;);" />
                     <ui:Button text="Reload" display-tooltip-when-elided="true" name="ReloadBtn" class="button" style="background-image: url(&apos;project://database/Assets/Sprites/Icons/Misc/Gear.png?fileID=21300000&amp;guid=042fae2dd68bce044b8fbd1f26724a2d&amp;type=3#Gear&apos;);" />
                 </ui:VisualElement>
