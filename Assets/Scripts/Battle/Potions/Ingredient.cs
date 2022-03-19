@@ -3,15 +3,13 @@ namespace CodeBrewery.Glime.Battle.Potions
 {
     public class Ingredient
     {
+        public PotionType type { get; private set; }
         public PotionTypeList PotionTypes { get; private set; }
 
         public Ingredient(IngredientType type, PotionTypeList potionType)
         {
+            this.type = type;
             this.PotionTypes = potionType;
-        }
-        void Test()
-        {
-            PotionTypes = new PotionTypeList();
         }
 
         public static PotionTypeList CreateFrailLavabloom()
