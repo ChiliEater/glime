@@ -375,8 +375,8 @@ TextureImporter:
         y: 35
         width: 35
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -430,6 +430,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: crafting_tab
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 163
+        width: 33
+        height: 17
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6bbd9b5e2c1e44dacdaeb6d1d2ec00
+      internalID: 1662706222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: combat_tab
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 163
+        width: 33
+        height: 17
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b564aaf9d7b9b54f88df0237e5923bc
+      internalID: -390160264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -453,7 +495,9 @@ TextureImporter:
       potion1: 848670489
       herb12: 1159111569
       herb01: 14162953
+      combat_tab: -390160264
       herb02: -173543916
+      crafting_tab: 1662706222
       settings: -1527349027
       turns: 1971259686
   spritePackingTag: 
