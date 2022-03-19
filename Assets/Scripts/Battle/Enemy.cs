@@ -46,7 +46,7 @@ namespace CodeBrewery.Glime.Battle
 
         void Update()
         {
-            if (!NavMeshAgent.isStopped)
+            if (NavMeshAgent.isOnNavMesh && !NavMeshAgent.isStopped)
             {
                 CurrentDistance += Vector3.Distance(lastPosition, transform.position);
                 lastPosition = transform.position;
