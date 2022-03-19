@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,11 +20,11 @@ namespace CodeBrewery.Glime
         /// <summary>
         /// Gets the text object to print the debug text to.
         /// </summary>
-        protected Text DebugText
+        protected TextMeshProUGUI DebugText
         {
             get
             {
-                return GetComponent<Text>();
+                return GetComponent<TextMeshProUGUI>();
             }
         }
 
