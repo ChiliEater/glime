@@ -38,8 +38,8 @@ namespace CodeBrewery.Glime.UI.Manager
 
         private void UpdateBattleTime()
         {
-            MinuteLabel.text = encounterManager.BattleTimeMinute.ToString("00");
-            SecondLabel.text = encounterManager.BattleTimeMinute.ToString("00");
+            MinuteLabel.text = encounterManager.BattleTimeMinutes.ToString("00");
+            SecondLabel.text = encounterManager.BattleTimeSeconds.ToString("00");
         }
 
         public void ActivatePotion(TabGroup group) {
@@ -65,10 +65,12 @@ namespace CodeBrewery.Glime.UI.Manager
         private void UpdatePotionLabels()
         {
             Potion potion = currentPotion.CreatePotion();
+            PotionNameLabel.text = potion.Name;
+
             string description = "Description:" + Environment.NewLine;
             description += string.Join(
                 Environment.NewLine,
-                from entry in potion.potionTypes
+                from entry in potion.PotionTypes
                 select $"- {entry.Value:00}x {entry.Key}");
 
             PotionDescriptionlabel.text = description;

@@ -23,7 +23,6 @@ namespace CodeBrewery.Glime.UI.Element
 
         public void ActivateTab(ManagedTab tab)
         {
-            Debug.Log("try to activate tab " + tab.gameObject.GetPath());
             int index = Tabs.IndexOf(tab);
             if(index < 0)
             {

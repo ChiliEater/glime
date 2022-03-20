@@ -68,11 +68,11 @@ namespace CodeBrewery.Glime.UI.Model
                 {
                     for (int i = 0; i < keyValue.Value; i++)
                     {
-                        Ingredient ingredient = Ingredient.CreateIngredient(keyValue.Key);
+                        Ingredient ingredient = Ingredient.GetIngredient(keyValue.Key);
                         potionTypeSet.AddIngredients(ingredient.PotionTypes);
                     }
                 }
-                return new Potion(potionTypeSet);
+                return new Potion(potionTypeSet.ToReadonly());
             }
 
             public IEnumerator<IngredientType> GetEnumerator()
