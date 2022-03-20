@@ -8,6 +8,7 @@ namespace CodeBrewery.Glime.Battle
     /// Represents an enemy.
     /// </summary>
     [RequireComponent(typeof(NavMeshAgent))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class Enemy : Participant
     {
         /// <summary>
@@ -52,12 +53,18 @@ namespace CodeBrewery.Glime.Battle
         public float CurrentDistance { get; private set; }
 
         /// <summary>
+        /// Gets the rigidbody of the enemy.
+        /// </summary>
+        protected Rigidbody2D Rigidbody2D { get; private set; }
+
+        /// <summary>
         /// Initializes the enemy.
         /// </summary>
         public void Start()
         {
             Type.AddRange(type);
             NavMeshAgent = GetComponent<NavMeshAgent>();
+            Rigidbody2D = GetComponent<Rigidbody2D>();
             lastPosition = transform.position;
         }
 
