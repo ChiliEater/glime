@@ -9,7 +9,7 @@ namespace CodeBrewery.Glime.Battle.Potions
         /// <summary>
         /// The name of the potion.
         /// </summary>
-        private string name = null;
+        private string name = "Potion";
 
         /// <summary>
         /// Gets the type of the potion.

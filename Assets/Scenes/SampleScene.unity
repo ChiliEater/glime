@@ -3137,7 +3137,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unnamed Potion
+  m_text: No Potion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b703b44407317ef40a3109e55e225429, type: 2}
   m_sharedMaterial: {fileID: -191123064685284657, guid: b703b44407317ef40a3109e55e225429, type: 2}
@@ -4579,9 +4579,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e9cdf1efb7af14a9274418fe6d26f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PotionNameLabel: {fileID: 0}
-  PotionDescriptionlabel: {fileID: 0}
-  PotionIngredientsLabel: {fileID: 0}
+  PotionNameLabel: {fileID: 1800260612}
+  PotionDescriptionlabel: {fileID: 270130238}
+  PotionIngredientsLabel: {fileID: 1563673323}
 --- !u!114 &1599190359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4866,7 +4866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unnamed Potion
+  m_text: No Potion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b703b44407317ef40a3109e55e225429, type: 2}
   m_sharedMaterial: {fileID: -191123064685284657, guid: b703b44407317ef40a3109e55e225429, type: 2}
@@ -5578,7 +5578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.6, y: 0}
+  m_AnchoredPosition: {x: 18.599998, y: -1}
   m_SizeDelta: {x: 100, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2097291728

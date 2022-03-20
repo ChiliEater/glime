@@ -17,7 +17,7 @@ namespace CodeBrewery.Glime.UI.Model
         public delegate void PotionSetHandler(int index, Potion potion);
         public event PotionSetHandler OnPotionSetEvent;
 
-        private Potion CurrentPotion {
+        public Potion CurrentPotion {
             get
             {
                 if (currentPotion < 0 || currentPotion >= potions.Count) return null;
