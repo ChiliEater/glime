@@ -95,5 +95,15 @@ namespace CodeBrewery.Glime.Battle.Potions
                     { PotionType.Electric, 1 }
                 }.ToReadonly());
         }
+
+        public static Ingredient CreateIngredient(IngredientType type) => type switch
+        {
+            IngredientType.FrailLavaBloom => CreateFrailLavabloom(),
+            IngredientType.FrostMint => CreateFrostMint(),
+            IngredientType.LukewarmBeserkium => CreateLukewarmBerserkium(),
+            IngredientType.JuviBerries => CreateJuviBerries(),
+            IngredientType.Paraleaf => CreateParaleaf(),
+            _ => throw new System.Exception("Unkown type \"" + type.ToString() + "\"")
+        };
     }
 }

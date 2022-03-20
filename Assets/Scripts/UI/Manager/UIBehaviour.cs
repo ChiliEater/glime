@@ -7,7 +7,7 @@ namespace CodeBrewery.Glime.UI.Manager {
     public class UIBehaviour : MonoBehaviour
     {
         private MainUIManager backingMainUIManager;
-        protected MainUIManager mainUIManager { 
+        protected MainUIManager MainUIManager { 
             get {
                 if(backingMainUIManager == null)
                 {
@@ -16,6 +16,9 @@ namespace CodeBrewery.Glime.UI.Manager {
                 return backingMainUIManager;
             }
         }
+
+        protected CraftingUIManager CraftingUI => MainUIManager.CraftingUI;
+        protected CombatUIManager CombatUI => MainUIManager.CombatUI;
 
     }
 }
