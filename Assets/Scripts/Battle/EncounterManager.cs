@@ -1,3 +1,4 @@
+using CodeBrewery.Glime.Battle.Potions;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,7 +51,7 @@ namespace CodeBrewery.Glime.Battle
         /// </summary>
         public TimeSpan BattleTime { get; private set; }
 
-        public UnityEvent<int> OnTurnStartEvent;
+        public UnityEvent<int, List<Potion>> OnTurnStartEvent;
 
         /// <summary>
         /// Gets the number of minutes which passed during the battle.
@@ -83,9 +84,9 @@ namespace CodeBrewery.Glime.Battle
             }
         }
 
-        public void StartTurn()
+        public void StartTurn(List<Potion> potions )
         {
-            OnTurnStartEvent.Invoke(TurnCount);
+            OnTurnStartEvent.Invoke(TurnCount, potions);
             BattleOngoing = true;
             enemiesCurrentlyInTurn.Clear();
             enemiesCurrentlyInTurn.AddRange(Enemies);

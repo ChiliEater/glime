@@ -1150,10 +1150,9 @@ MonoBehaviour:
   OnTabChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1639495777}
-        m_TargetAssemblyTypeName: CodeBrewery.Glime.UI.Manager.CraftingUIManager,
-          Assembly-CSharp
-        m_MethodName: ActivatePotion
+      - m_Target: {fileID: 1599190358}
+        m_TargetAssemblyTypeName: CodeBrewery.Glime.UI.Manager.CombatUIManager, Assembly-CSharp
+        m_MethodName: PotionSelectHandler
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 306981323}

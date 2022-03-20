@@ -30,6 +30,19 @@ namespace CodeBrewery.Glime.UI.Model
             CurrentPosion = index;
         }
 
+
+        public List<Potion> CraftPotions()
+        {
+            List<Potion> potions = new List<Potion>();
+            foreach(var potionIngredients in potionIngredientModelList)
+            {
+                if(potionIngredients.Count > 0)
+                {
+                    potions.Add(potionIngredients.CreatePotion());
+                }
+            }
+            return potions;
+        }
                 
         public class PotionIngredientsModel : ICollection<IngredientType>
         {

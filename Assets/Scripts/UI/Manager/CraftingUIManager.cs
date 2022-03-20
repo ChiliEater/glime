@@ -32,7 +32,7 @@ namespace CodeBrewery.Glime.UI.Manager
         }
 
         public void StartTurn() {
-            MainUIManager.StartTurn();
+            MainUIManager.StartTurn(model.CraftPotions());
         }
 
 

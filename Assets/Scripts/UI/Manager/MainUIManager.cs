@@ -1,4 +1,5 @@
 using CodeBrewery.Glime.Battle;
+using CodeBrewery.Glime.Battle.Potions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,9 +21,9 @@ namespace CodeBrewery.Glime.UI.Manager
         }
 
 
-        public void StartTurn() {
+        public void StartTurn(List<Potion> craftedPotions) {
             SwitchToBattleUI();
-            EncounterManager.StartTurn();
+            EncounterManager.StartTurn(craftedPotions);
         }
 
         public void SwitchToCraftingUI()
