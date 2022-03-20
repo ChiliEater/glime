@@ -31,7 +31,7 @@ namespace CodeBrewery.Glime.Battle.Potions
             }
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
