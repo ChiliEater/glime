@@ -8,7 +8,7 @@ namespace CodeBrewery.Glime.UI.Model
 {
     public class PotionShelf
     {
-        public int CurrentPotionIndex { get; private set} = 0;
+        public int CurrentPotionIndex { get; private set; } = 0;
         private List<Potion> potions = new List<Potion>();
         public IReadOnlyList<Potion> Potions => potions;
 
