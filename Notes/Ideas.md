@@ -38,10 +38,10 @@
   - yeti (ice, tank, living) - drawn
     - baby yeti (ice, living) - drawn
   - skeleton (undead, hellish)
-    - revenant (undead, hellish)
-    - ice skeleton (undead, ice)
+    - revenant (undead, hellish) - drawn
+    - ice skeleton (undead, ice) - drawn
     - juvenile skeleton (undead, agile)
-    - XL skeleton (undead, tank)
+    - Hardened skeleton (undead, tank) - drawn
   - Polar Bear (living, ice, tank)
   - KILLLER ROOMBA (conductive, CHAINSAW)
 - enemy types:
