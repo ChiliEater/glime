@@ -35,8 +35,8 @@
 ## Potion System
 - every potion is weak against a type (or multiple type) and strong against a type (or multiple)
 - enemies:
-  - yeti (ice, tank, living)
-    - baby yeti (ice, living)
+  - yeti (ice, tank, living) - drawn
+    - baby yeti (ice, living) - drawn
   - skeleton (undead, hellish)
     - revenant (undead, hellish)
     - ice skeleton (undead, ice)
