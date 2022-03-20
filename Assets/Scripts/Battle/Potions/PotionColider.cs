@@ -33,6 +33,7 @@ namespace CodeBrewery.Glime.Battle.Potions
 
         private void OnCollisionEnter(Collision collision)
         {
+            Debug.Log("test");
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
