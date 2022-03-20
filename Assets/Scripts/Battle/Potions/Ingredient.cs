@@ -31,78 +31,69 @@ namespace CodeBrewery.Glime.Battle.Potions
         /// Creates a new <see cref="IngredientType.FrailLavaBloom"/> ingredient.
         /// </summary>
         /// <returns>A new <see cref="IngredientType.FrailLavaBloom"/> ingredient.</returns>
-        public static Ingredient CreateFrailLavabloom()
-        {
-            return new Ingredient(
-                IngredientType.FrailLavaBloom,
-                new PotionTypeSet() {
-                    { PotionType.Fire, 2 },
-                    { PotionType.Weakness, 1}
-                }.ToReadonly());
-        }
+        public static Ingredient FrailLavabloom { get; } = new Ingredient(
+            IngredientType.FrailLavaBloom,
+            new PotionTypeSet() {
+                { PotionType.Fire, 2 },
+                { PotionType.Weakness, 1}
+            }.ToReadonly());
 
         /// <summary>
         /// Creates a new <see cref="IngredientType.FrostMint"/> ingredient.
         /// </summary>
         /// <returns>A new <see cref="IngredientType.FrostMint"/> ingredient.</returns>
-        public static Ingredient CreateFrostMint()
-        {
-            return new Ingredient(
-                IngredientType.FrostMint,
-                new PotionTypeSet() {
-                    { PotionType.Ice, 2 },
-                    { PotionType.Fire, 1}
-                }.ToReadonly());
-        }
+        public static Ingredient FrostMint { get; } = new Ingredient(
+            IngredientType.FrostMint,
+            new PotionTypeSet() {
+                { PotionType.Ice, 2 },
+                { PotionType.Fire, 1}
+            }.ToReadonly());
 
         /// <summary>
         /// Creates a new <see cref="IngredientType.LukewarmBeserkium"/> ingredient.
         /// </summary>
         /// <returns>A new <see cref="IngredientType.LukewarmBeserkium"/> ingredient.</returns>
-        public static Ingredient CreateLukewarmBerserkium()
-        {
-            return new Ingredient(
-                IngredientType.LukewarmBeserkium,
-                new PotionTypeSet() {
-                    { PotionType.Strength, 1 },
-                    { PotionType.Ice, 1},
-                    { PotionType.Fire, 1 }
-                }.ToReadonly());
-        }
+        public static Ingredient LukewarmBerserkium { get; } = new Ingredient(
+            IngredientType.LukewarmBeserkium,
+            new PotionTypeSet() {
+                { PotionType.Strength, 1 },
+                { PotionType.Ice, 1},
+                { PotionType.Fire, 1 }
+            }.ToReadonly());
 
         /// <summary>
         /// Creates a new <see cref="IngredientType.JuviBerries"/> ingredient.
         /// </summary>
         /// <returns>A new <see cref="IngredientType.JuviBerries"/> ingredient.</returns>
-        public static Ingredient CreateJuviBerries()
-        {
-            return new Ingredient(
-                IngredientType.JuviBerries,
-                new PotionTypeSet() {
-                    { PotionType.Healing, 2 }
-                }.ToReadonly());
-        }
+        public static Ingredient JuviBerries { get; } = new Ingredient(
+            IngredientType.JuviBerries,
+            new PotionTypeSet() {
+                { PotionType.Healing, 2 }
+            }.ToReadonly());
 
         /// <summary>
         /// Creates a new <see cref="IngredientType.Paraleaf"/> ingredient.
         /// </summary>
         /// <returns>A new <see cref="IngredientType.Paraleaf"/> ingredient.</returns>
-        public static Ingredient CreateParaleaf()
-        {
-            return new Ingredient(
-                IngredientType.Paraleaf,
-                new PotionTypeSet() {
-                    { PotionType.Electric, 1 }
-                }.ToReadonly());
-        }
+        public static Ingredient Paraleaf { get; } = new Ingredient(
+            IngredientType.Paraleaf,
+            new PotionTypeSet() {
+                { PotionType.Electric, 1 }
+            }.ToReadonly());
 
-        public static Ingredient CreateIngredient(IngredientType type) => type switch
+        /// <summary>
+        /// Gets an instance of an ingredient.
+        /// </summary>
+        /// <param name="type">The type of the ingredient to get.</param>
+        /// <returns>An instance of an ingredient with the specified <paramref name="type"/>.</returns>
+        /// <exception cref="System.Exception">An ingredient with the specified <paramref name="type"/> does not exist.</exception>
+        public static Ingredient GetIngredient(IngredientType type) => type switch
         {
-            IngredientType.FrailLavaBloom => CreateFrailLavabloom(),
-            IngredientType.FrostMint => CreateFrostMint(),
-            IngredientType.LukewarmBeserkium => CreateLukewarmBerserkium(),
-            IngredientType.JuviBerries => CreateJuviBerries(),
-            IngredientType.Paraleaf => CreateParaleaf(),
+            IngredientType.FrailLavaBloom => FrailLavabloom,
+            IngredientType.FrostMint => FrostMint,
+            IngredientType.LukewarmBeserkium => LukewarmBerserkium,
+            IngredientType.JuviBerries => JuviBerries,
+            IngredientType.Paraleaf => Paraleaf,
             _ => throw new System.Exception("Unkown type \"" + type.ToString() + "\"")
         };
     }

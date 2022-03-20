@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 using TMPro;
 
 namespace CodeBrewery.Glime

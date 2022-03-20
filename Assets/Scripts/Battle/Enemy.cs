@@ -17,33 +17,54 @@ namespace CodeBrewery.Glime.Battle
         private EnemyType[] type;
 
         /// <summary>
+        /// The last position of the enemy.
+        /// </summary>
+        private Vector3 lastPosition;
+
+        /// <summary>
         /// Gets the type of the enemy.
         /// </summary>
         public List<EnemyType> Type { get; } = new List<EnemyType>();
 
+        /// <summary>
+        /// Gets or sets a component for determining the movement path of the enemy.
+        /// </summary>
         private NavMeshAgent NavMeshAgent { get; set; }
 
+        /// <summary>
+        /// Gets the position of the target the enemy should be moving to.
+        /// </summary>
         public Vector3 Target { get; private set; }
 
+        /// <summary>
+        /// Gets or sets the speed of the enemy.
+        /// </summary>
         public float Speed { get; set; }
 
+        /// <summary>
+        /// Gets or sets the maximum of the distance the enemy is allowed to go.
+        /// </summary>
         public float MaxDistance { get; set; }
 
+        /// <summary>
+        /// Gets the current distance the enemy walked so far.
+        /// </summary>
         public float CurrentDistance { get; private set; }
-
-        private Vector3 lastPosition;
-
 
         /// <summary>
         /// Initializes the enemy.
         /// </summary>
-        public void Start()
+        public override void Start()
         {
+            base.Start();
             Type.AddRange(type);
             NavMeshAgent = GetComponent<NavMeshAgent>();
             lastPosition = transform.position;
         }
 
+        /// <summary>
+        /// Handles updates before each frame.
+        /// </summary>
         void Update()
         {
             if (NavMeshAgent.isOnNavMesh && !NavMeshAgent.isStopped)
@@ -57,6 +78,10 @@ namespace CodeBrewery.Glime.Battle
             }
         }
 
+        /// <summary>
+        /// Starts a turn.
+        /// </summary>
+        /// <param name="encounterManager">A component for managing the encounter.</param>
         public void TurnStarts(EncounterManager encounterManager)
         {
             CurrentDistance = 0;
