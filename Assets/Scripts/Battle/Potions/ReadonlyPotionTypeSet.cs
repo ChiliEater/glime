@@ -33,7 +33,7 @@ namespace CodeBrewery.Glime.Battle
         }
 
         /// <inheritdoc/>
-        public int this[PotionType key] => InnerList[key];
+        public int this[PotionType key] => this.GetValueOrDefault(key, 0);
 
         /// <inheritdoc/>
         public IEnumerable<PotionType> Keys => InnerList.Keys;
