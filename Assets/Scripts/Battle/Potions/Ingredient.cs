@@ -103,7 +103,7 @@ namespace CodeBrewery.Glime.Battle.Potions
             IngredientType.LukewarmBeserkium => CreateLukewarmBerserkium(),
             IngredientType.JuviBerries => CreateJuviBerries(),
             IngredientType.Paraleaf => CreateParaleaf(),
-            _ => throw new System.Exception("Unkown type \"" + type.ToString() + "\"";
+            _ => throw new System.Exception("Unkown type \"" + type.ToString() + "\"")
         };
     }
 }

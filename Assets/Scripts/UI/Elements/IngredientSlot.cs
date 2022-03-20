@@ -3,6 +3,7 @@ using CodeBrewery.Glime.UI.Manager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -12,11 +13,16 @@ namespace CodeBrewery.Glime.UI.Element
     public class IngredientSlot : UIBehaviour
     {
         public IngredientType ingredientType;
-        public Ingredient ingredient { get; private set; }
 
-        void Start()
+        public TextMeshProUGUI ingredientText;
+
+        void Start() {
+            ingredientText.text = ingredientType.ToString();
+        }
+
+        public void AddIngredient()
         {
-            ingredient = Ingredient.CreateIngredient(ingredientType);
+            CraftingUI.AddIngredient(ingredientType);
         }
 
     }
