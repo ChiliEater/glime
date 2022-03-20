@@ -138,11 +138,14 @@ namespace CodeBrewery.Glime.Battle
 
                 float vX = nextFloat(-3.0f, 3.0f);
                 float vY = nextFloat(0.0f, 3.0f);
-                enemiesCurrentlyInTurn.Add(
-                    Instantiate(
-                        Enemies[rand.Next(Enemies.Length)],
+
+                Enemy enemy = Instantiate(
+                        Enemies[rand.Next(EnemyCandidates.Length)],
                         new Vector3(x: location.x + vX, y: location.y + vY, z: location.z),
-                        Transform.rotation).GetComponent<Enemy>());
+                        Transform.rotation).GetComponent<Enemy>();
+
+                enemy.TurnStarts(this);
+                enemiesCurrentlyInTurn.Add(enemy);
             }
 
             OnTurnStartEvent.Invoke(TurnCount, potions);
