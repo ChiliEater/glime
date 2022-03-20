@@ -21,6 +21,12 @@ namespace CodeBrewery.Glime.UI.Manager
             UpdateTurnCounter();
         }
 
+        private void OnEnable()
+        {
+            UpdateTime();
+            UpdateTurnCounter();
+        }
+
         void Update()
         {
             UpdateTime();

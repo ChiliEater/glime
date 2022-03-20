@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -2409017922503160698}
   - component: {fileID: 325808333270719448}
   - component: {fileID: 3786149777310877328}
-  - component: {fileID: 7204654366439880397}
   - component: {fileID: 8699564188033048202}
   m_Layer: 0
   m_Name: BabyYeti
@@ -145,28 +144,7 @@ MonoBehaviour:
   hitPoints: 5
   attack: 1
   type: 
---- !u!195 &7204654366439880397
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8149441353386540619}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  Speed: 0
 --- !u!61 &8699564188033048202
 BoxCollider2D:
   m_ObjectHideFlags: 0
