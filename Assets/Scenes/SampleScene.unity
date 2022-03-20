@@ -2506,7 +2506,7 @@ MonoBehaviour:
   - {fileID: 3855455075181486315, guid: 20d6740dc498213489ae954751ca2f77, type: 3}
   - {fileID: 4368403253421745126, guid: 8dcea1423af62334f8a35824d669a23b, type: 3}
   - {fileID: 8149441353386540619, guid: 37738c300df28c046aabfcaad88c3002, type: 3}
-  enemyTarget: {x: 0, y: 0, z: 0}
+  TargetTransform: {fileID: 1324063152}
   OnTurnStoppedEvent:
     m_PersistentCalls:
       m_Calls: []

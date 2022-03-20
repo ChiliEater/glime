@@ -19,15 +19,9 @@ namespace CodeBrewery.Glime.Battle
         private GameObject[] enemyCandidates;
 
         /// <summary>
-        /// The location the enemies should walk to.
-        /// </summary>
-        [SerializeField]
-        private Vector3 enemyTarget;
-
-        /// <summary>
         /// The transformation of the game-object.
         /// </summary>
-        private new Transform transform = null;
+        public Transform TargetTransform;
 
         /// <summary>
         /// Gets or sets the instance of the player.
@@ -52,23 +46,8 @@ namespace CodeBrewery.Glime.Battle
         /// <summary>
         /// Gets or sets the target of the enemies.
         /// </summary>
-        public Vector3 EnemyTarget => enemyTarget;
+        public Vector3 EnemyTarget => TargetTransform.position;
 
-        /// <summary>
-        /// Gets the location of the object.
-        /// </summary>
-        public Transform Transform
-        {
-            get
-            {
-                if (transform == null)
-                {
-                    transform = GetComponent<Transform>();
-                }
-
-                return transform;
-            }
-        }
 
         /// <summary>
         /// Gets or sets the number of enemies.
@@ -123,7 +102,7 @@ namespace CodeBrewery.Glime.Battle
         {
             var rand = new System.Random();
             int enemyCount = Mathf.Min(1 + ((TurnCount ^ 2) / 10), 100);
-            Vector3 location = Transform.position;
+            Vector3 location = transform.position;
             enemiesCurrentlyInTurn.Clear();
             BattleOngoing = true;
 
@@ -142,8 +121,8 @@ namespace CodeBrewery.Glime.Battle
                 Enemy enemy = Instantiate(
                         EnemyCandidates[rand.Next(EnemyCandidates.Length)],
                         new Vector3(x: location.x + vX, y: location.y + vY, z: location.z),
-                        Transform.rotation,
-                        Transform).GetComponent<Enemy>();
+                        transform.rotation,
+                        transform).GetComponent<Enemy>();
 
                 enemy.TurnStarts(this);
                 enemiesCurrentlyInTurn.Add(enemy);

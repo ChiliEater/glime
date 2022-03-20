@@ -69,11 +69,9 @@ namespace CodeBrewery.Glime.Battle
         {
             if (walking)
             {
-                Debug.Log("walking");
                 lastPosition = transform.position;
                 rb.MovePosition(Vector3.MoveTowards(transform.position, target, Speed*Time.deltaTime));
                 CurrentDistance += Mathf.Abs(Vector3.Distance(lastPosition, transform.position));
-                Debug.Log($"CurrentDistance: {CurrentDistance}, maxDistance: {MaxDistance}");
                 if (CurrentDistance > MaxDistance)
                 {
                     encounterManager.StopTurn(this);
