@@ -40,10 +40,11 @@
   - skeleton (undead, hellish)
     - revenant (undead, hellish) - drawn
     - ice skeleton (undead, ice) - drawn
-    - floating skeleton (undead, agile) -drawn
+    - floating skeleton (undead, agile) - drawn
     - Hardened skeleton (undead, tank) - drawn
-  - Polar Bear (living, ice, tank)
-  - KILLLER ROOMBA (conductive, CHAINSAW)
+  - Berg (living, ice, tank) - drawn
+  - KILLLER ROOMBA (conductive, CHAINSAW) - drawn
+  - CAR
 - enemy types:
   - undead (inverts effetcts of healing, strentgh & weakness)
   - hellish (resists fire, weak against ice)
