@@ -1922,17 +1922,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c70fd19be2c9324092862b9a3150755, type: 3}
---- !u!114 &449109136 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7053327943431138614, guid: 2c70fd19be2c9324092862b9a3150755, type: 3}
-  m_PrefabInstance: {fileID: 449109135}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &497943050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3630,11 +3619,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1361568708 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 204927860828866815, guid: 2c70fd19be2c9324092862b9a3150755, type: 3}
-  m_PrefabInstance: {fileID: 449109135}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1361568709 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 191285773858063170, guid: 2c70fd19be2c9324092862b9a3150755, type: 3}
@@ -3645,27 +3629,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -2650686393759569522, guid: 2c70fd19be2c9324092862b9a3150755, type: 3}
   m_PrefabInstance: {fileID: 449109135}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361568708}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a8236f0d0a8ba24f9f6732e40a14658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1361568715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361568708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd93ef81e5d0c742ab8f3056b3090f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Image: {fileID: 449109136}
-  EmptyPotionSprite: {fileID: 21300000, guid: bbc53608878294d46a1e3b694ee0a1fb, type: 3}
-  FullPotionSprite: {fileID: 21300000, guid: 117b17facff65dc42b1b57deb7c21551, type: 3}
 --- !u!1001 &1381064737
 PrefabInstance:
   m_ObjectHideFlags: 0
