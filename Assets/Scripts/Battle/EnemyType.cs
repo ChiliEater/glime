@@ -33,6 +33,11 @@ namespace CodeBrewery.Glime.Battle
         /// <summary>
         /// Indicates the living type.
         /// </summary>
-        Living
+        Living,
+
+        /// <summary>
+        /// Indicates the conductive type.
+        /// </summary>
+        Conductive
     }
 }

@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 10
-  attack: 1
-  type: 
-  Speed: 0
+  attack: 2
+  type: 0000000001000000
+  Speed: 1
+  MaxDistance: 0
