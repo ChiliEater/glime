@@ -16,6 +16,8 @@ namespace CodeBrewery.Glime.Battle
         [SerializeField]
         private EnemyType[] type;
 
+        private Vector3 lastPosition;
+
         /// <summary>
         /// Gets the type of the enemy.
         /// </summary>
@@ -30,9 +32,6 @@ namespace CodeBrewery.Glime.Battle
         public float MaxDistance { get; set; }
 
         public float CurrentDistance { get; private set; }
-
-        private Vector3 lastPosition;
-
 
         /// <summary>
         /// Initializes the enemy.
