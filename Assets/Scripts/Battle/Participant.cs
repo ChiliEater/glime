@@ -5,6 +5,7 @@ namespace CodeBrewery.Glime.Battle
     /// <summary>
     /// Provides the capability to participate at a battle.
     /// </summary>
+    [RequireComponent(typeof(Rigidbody2D))]
     public class Participant : MonoBehaviour
     {
         /// <summary>
@@ -35,6 +36,19 @@ namespace CodeBrewery.Glime.Battle
         {
             get => attack;
             set => attack = value;
+        }
+
+        /// <summary>
+        /// Gets the rigidbody of the participant.
+        /// </summary>
+        protected Rigidbody2D Rigidbody2D { get; private set; }
+
+        /// <summary>
+        /// Initializes the participant.
+        /// </summary>
+        public virtual void Start()
+        {
+            Rigidbody2D = GetComponent<Rigidbody2D>();
         }
     }
 }
