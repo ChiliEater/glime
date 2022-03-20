@@ -142,7 +142,8 @@ namespace CodeBrewery.Glime.Battle
                 Enemy enemy = Instantiate(
                         EnemyCandidates[rand.Next(EnemyCandidates.Length)],
                         new Vector3(x: location.x + vX, y: location.y + vY, z: location.z),
-                        Transform.rotation).GetComponent<Enemy>();
+                        Transform.rotation,
+                        Transform).GetComponent<Enemy>();
 
                 enemy.TurnStarts(this);
                 enemiesCurrentlyInTurn.Add(enemy);
