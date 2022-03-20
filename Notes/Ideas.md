@@ -44,7 +44,7 @@
     - Hardened skeleton (undead, tank) - drawn
   - Berg (living, ice, tank) - drawn
   - KILLLER ROOMBA (conductive, CHAINSAW) - drawn
-  - CAR
+  - CAR - drawn
 - enemy types:
   - undead (inverts effetcts of healing, strentgh & weakness)
   - hellish (resists fire, weak against ice)
@@ -62,11 +62,11 @@
   - weakness (reduces DMG and DEF)
 
 - ingredients
-  - 2 fire & weakness - frail lavabloom
-  - 2 ice, 1 fire,  - frostmint
-  - 1 strength & 1 ice & 1 fire - lukewarm berserkium
-  - 2 healing - Juvi-Berries
-  - 1 electricity - paraleaf
+  - 2 fire & weakness - frail lavabloom - done
+  - 2 ice, 1 fire,  - frostmint - done
+  - 1 strength & 1 ice & 1 fire - lukewarm berserkium - done
+  - 2 healing - Juvi-Berries - done
+  - 1 electricity - paraleaf - done
 
 ## MVP
 - 1 Level
