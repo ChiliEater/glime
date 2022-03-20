@@ -42,6 +42,48 @@ namespace CodeBrewery.Glime.Battle.Potions
         public int TotalAmount => this.Sum((entry) => entry.Value);
 
         /// <summary>
+        /// Gets the normalized set.
+        /// </summary>
+        public ReadonlyPotionTypeSet Normalized
+        {
+            get
+            {
+                PotionTypeSet result = new PotionTypeSet();
+
+                foreach (PotionType type in new[] { PotionType.Electric, PotionType.Healing })
+                {
+                    result[type] = this[type];
+                }
+
+                foreach (
+                    (PotionType, PotionType) entry in
+                    new[] {
+                        (PotionType.Ice, PotionType.Fire),
+                        (PotionType.Strength, PotionType.Weakness)
+                        })
+                {
+                    if (this[entry.Item1] > 0 && this[entry.Item2] > 0)
+                    {
+                        int difference = this[entry.Item1] - this[entry.Item2];
+                        result[entry.Item1] = 0;
+                        result[entry.Item2] = 0;
+
+                        if (difference > 0)
+                        {
+                            result[entry.Item1] = difference;
+                        }
+                        else
+                        {
+                            result[entry.Item2] = difference;
+                        }
+                    }
+                }
+
+                return result.ToReadonly();
+            }
+        }
+
+        /// <summary>
         /// Adds the specified <paramref name="potion"/> to the list.
         /// </summary>
         /// <param name="potion">The potion-type to add to the list.</param>
