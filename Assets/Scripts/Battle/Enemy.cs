@@ -69,14 +69,16 @@ namespace CodeBrewery.Glime.Battle
         {
             if (walking)
             {
-                lastPosition = transform.position;
                 rb.MovePosition(Vector3.MoveTowards(transform.position, target, Speed*Time.deltaTime));
                 CurrentDistance += Mathf.Abs(Vector3.Distance(lastPosition, transform.position));
+
                 if (CurrentDistance > MaxDistance)
                 {
                     encounterManager.StopTurn(this);
                     walking = false;
                 }
+
+                lastPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             }
         }
 
