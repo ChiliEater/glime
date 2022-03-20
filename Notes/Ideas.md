@@ -41,7 +41,7 @@
     - revenant (undead, hellish)
     - ice skeleton (undead, ice)
     - juvenile skeleton (undead, agile)
-    - XL skeleton (undead, tank)
+    - Hardened skeleton (undead, tank)
   - Polar Bear (living, ice, tank)
   - KILLLER ROOMBA (conductive, CHAINSAW)
 - enemy types:
