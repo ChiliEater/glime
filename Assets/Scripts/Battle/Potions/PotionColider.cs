@@ -14,6 +14,7 @@ namespace CodeBrewery.Glime.Battle.Potions
         private static readonly int ADDED_SPEED = 3;
 
         private static readonly float POTION_EFFECT_DURATION = 3;
+        public bool DisableDestroy = false;
         public Potion potion { get; set; }
         private float spawnedAt;
 
@@ -24,7 +25,7 @@ namespace CodeBrewery.Glime.Battle.Potions
 
         void Update()
         {
-            if (spawnedAt + POTION_EFFECT_DURATION > Time.timeSinceLevelLoad)
+            if (spawnedAt + POTION_EFFECT_DURATION < Time.timeSinceLevelLoad && !DisableDestroy)
             {
                 Destroy(gameObject);
             }

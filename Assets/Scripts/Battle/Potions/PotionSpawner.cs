@@ -6,30 +6,14 @@ using UnityEngine.EventSystems;
 namespace CodeBrewery.Glime.Battle.Potions
 {
     [RequireComponent(typeof(Collider2D))]
-    public class PotionSpawner : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
+    public class PotionSpawner : MonoBehaviour , IPointerDownHandler, IPointerUpHandler
     {
         public GameObject PotionCollider;
-        private void Update()
-        {
-            /*if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("test");
-                Vector2 mousePos = Input.mousePosition;
-                Instantiate(PotionCollider, mousePos, Quaternion.identity);
-            }*/
-        }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            Debug.Log("test up");
-        }
-
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(eventData.position);
+            Instantiate(PotionCollider, mousePos, Quaternion.identity, transform);
         }
 
         public void OnPointerDown(PointerEventData eventData)
