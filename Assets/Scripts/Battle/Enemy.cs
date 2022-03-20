@@ -47,6 +47,7 @@ namespace CodeBrewery.Glime.Battle
         public float CurrentDistance { get; private set; }
 
         private bool walking = false;
+        private Rigidbody2D rb;
 
         private EncounterManager encounterManager;
 
@@ -58,6 +59,7 @@ namespace CodeBrewery.Glime.Battle
             base.Start();
             Type.AddRange(type);
             lastPosition = transform.position;
+            rb = GetComponent<Rigidbody2D>();
         }
 
         /// <summary>
@@ -69,7 +71,7 @@ namespace CodeBrewery.Glime.Battle
             {
                 Debug.Log("walking");
                 lastPosition = transform.position;
-                transform.position = Vector3.MoveTowards(transform.position, target, Speed*Time.deltaTime);
+                rb.MovePosition(Vector3.MoveTowards(transform.position, target, Speed*Time.deltaTime));
                 CurrentDistance += Mathf.Abs(Vector3.Distance(lastPosition, transform.position));
                 Debug.Log($"CurrentDistance: {CurrentDistance}, maxDistance: {MaxDistance}");
                 if (CurrentDistance > MaxDistance)
