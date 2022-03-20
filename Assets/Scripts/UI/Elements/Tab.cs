@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CodeBrewery.Glime.UI.Element
 {
-    public class Tab : MonoBehaviour
+    public class Tab : TabGroup.ManagedTab
     {
     }
 }

@@ -1,8 +1,8 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace CodeBrewery.Glime.UI.Manager {
+namespace CodeBrewery.Glime.UI.Manager
+{
 
     public class UIBehaviour : MonoBehaviour
     {
@@ -19,6 +19,7 @@ namespace CodeBrewery.Glime.UI.Manager {
 
         protected CraftingUIManager CraftingUI => MainUIManager.CraftingUI;
         protected CombatUIManager CombatUI => MainUIManager.CombatUI;
+
 
     }
 }
