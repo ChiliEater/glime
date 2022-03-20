@@ -33,12 +33,12 @@ namespace CodeBrewery.Glime.Battle
         /// <summary>
         /// Gets or sets the target of the enemies.
         /// </summary>
-        public Vector3 EnemyTarget;
+        public Vector3 EnemyTarget { get; set; }
 
         /// <summary>
         /// Gets or sets the number of enemies.
         /// </summary>
-        public int EnemyCount;
+        public int EnemyCount { get; set; }
 
         /// <summary>
         /// Occurs when a turn stopped.
