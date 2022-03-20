@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,19 +16,35 @@ namespace CodeBrewery.Glime.Battle
 
         private List<Enemy> enemiesCurrentlyInTurn = new List<Enemy>();
 
+        public Boolean BattleOngoing { get; private set; }
+
         public Vector3 EnemyTarget;
 
         public int EnemyCount;
 
         public UnityEvent OnTurnStoppedEvent;
 
+        public float battleTime;
+
+        public int BattleTimeMinute => Mathf.FloorToInt(battleTime / 60);
+        public int BattleTimeSeconds => Mathf.FloorToInt(battleTime % 60);
+
         public void Start()
         {
             Enemies = GetComponentsInChildren<Enemy>();
         }
 
+        void Update()
+        {
+            if (BattleOngoing)
+            {
+                battleTime += Time.deltaTime;
+            }
+        }
+
         public void StartTurn()
         {
+            BattleOngoing = true;
             enemiesCurrentlyInTurn.Clear();
             enemiesCurrentlyInTurn.AddRange(Enemies);
             foreach (var enemy in Enemies)
@@ -42,6 +59,7 @@ namespace CodeBrewery.Glime.Battle
             enemiesCurrentlyInTurn.Remove(enemy);
             if(enemiesCurrentlyInTurn.Count == 0)
             {
+                BattleOngoing = false;
                 OnTurnStoppedEvent.Invoke();
             }
         }
