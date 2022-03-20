@@ -136,13 +136,14 @@ namespace CodeBrewery.Glime.Battle
                     return (float)val;
                 };
 
-                float vX = nextFloat(-3.0f, 3.0f);
-                float vY = nextFloat(0.0f, 3.0f);
+                float vX = nextFloat(-15f, 15f);
+                float vY = nextFloat(0f, 15f);
 
                 Enemy enemy = Instantiate(
                         EnemyCandidates[rand.Next(EnemyCandidates.Length)],
                         new Vector3(x: location.x + vX, y: location.y + vY, z: location.z),
-                        Transform.rotation).GetComponent<Enemy>();
+                        Transform.rotation,
+                        Transform).GetComponent<Enemy>();
 
                 enemy.TurnStarts(this);
                 enemiesCurrentlyInTurn.Add(enemy);
