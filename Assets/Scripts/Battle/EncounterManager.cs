@@ -28,7 +28,7 @@ namespace CodeBrewery.Glime.Battle
         /// <summary>
         /// Gets a value indicating whether the battle is ongoing.
         /// </summary>
-        public Boolean BattleOngoing { get; private set; }
+        public bool BattleOngoing { get; private set; }
 
         /// <summary>
         /// Gets or sets the target of the enemies.
