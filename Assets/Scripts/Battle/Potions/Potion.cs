@@ -13,7 +13,6 @@ namespace CodeBrewery.Glime.Battle.Potions
         /// <summary>
         /// Initializes a new instance of the <see cref="Potion"/> class.
         /// </summary>
-        /// <param name="type">The type of the potion.</param>
         /// <param name="potionTypes">The type of the potion.</param>
         public Potion(PotionTypeSet potionTypes)
         {
