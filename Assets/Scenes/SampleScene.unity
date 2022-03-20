@@ -2491,7 +2491,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e541a53b53a6441b4c67b1f23733df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Transform: {fileID: 1324063152}
+  enemies:
+  - {fileID: 8149441353386540619, guid: 4fca5649dc149be448a8b7ada750997f, type: 3}
+  - {fileID: 4540386000217623657, guid: b2fb66836b71f8c4aa97755827ea8c66, type: 3}
+  - {fileID: 1294778222731008873, guid: 9837e617e33c77f4c98d54bc152838df, type: 3}
+  - {fileID: 919134929787444732, guid: f5d04d9dbe5da6346b31c32b4d651153, type: 3}
+  - {fileID: 919134929787444732, guid: 3dc322251540bb24da536d31cb7e8b43, type: 3}
+  - {fileID: 3855455075181486315, guid: 20d6740dc498213489ae954751ca2f77, type: 3}
+  - {fileID: 4368403253421745126, guid: 8dcea1423af62334f8a35824d669a23b, type: 3}
+  - {fileID: 8149441353386540619, guid: 37738c300df28c046aabfcaad88c3002, type: 3}
+  enemyTarget: {x: 0, y: 0, z: 0}
   OnTurnStoppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5262,6 +5271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482ea629137c89c409f02c0510962c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PotionCollider: {fileID: 0}
 --- !u!4 &1931940023
 Transform:
   m_ObjectHideFlags: 0
