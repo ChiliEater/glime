@@ -7,7 +7,6 @@ namespace CodeBrewery.Glime.Battle
     /// <summary>
     /// Represents an enemy.
     /// </summary>
-    [RequireComponent(typeof(NavMeshAgent))]
     public class Enemy : Participant
     {
         /// <summary>
@@ -26,30 +25,30 @@ namespace CodeBrewery.Glime.Battle
         /// </summary>
         public List<EnemyType> Type { get; } = new List<EnemyType>();
 
-        /// <summary>
-        /// Gets or sets a component for determining the movement path of the enemy.
-        /// </summary>
-        private NavMeshAgent NavMeshAgent { get; set; }
 
         /// <summary>
         /// Gets the position of the target the enemy should be moving to.
         /// </summary>
-        public Vector3 Target { get; private set; }
+        private Vector3 target;
 
         /// <summary>
         /// Gets or sets the speed of the enemy.
         /// </summary>
-        public float Speed { get; set; }
+        public float Speed;
 
         /// <summary>
         /// Gets or sets the maximum of the distance the enemy is allowed to go.
         /// </summary>
-        public float MaxDistance { get; set; }
+        public float MaxDistance;
 
         /// <summary>
         /// Gets the current distance the enemy walked so far.
         /// </summary>
         public float CurrentDistance { get; private set; }
+
+        private bool walking = false;
+
+        private EncounterManager encounterManager;
 
         /// <summary>
         /// Initializes the enemy.
@@ -58,7 +57,6 @@ namespace CodeBrewery.Glime.Battle
         {
             base.Start();
             Type.AddRange(type);
-            NavMeshAgent = GetComponent<NavMeshAgent>();
             lastPosition = transform.position;
         }
 
@@ -67,13 +65,17 @@ namespace CodeBrewery.Glime.Battle
         /// </summary>
         void Update()
         {
-            if (NavMeshAgent.isOnNavMesh && !NavMeshAgent.isStopped)
+            if (walking)
             {
-                CurrentDistance += Vector3.Distance(lastPosition, transform.position);
+                Debug.Log("walking");
                 lastPosition = transform.position;
+                transform.position = Vector3.MoveTowards(transform.position, target, Speed*Time.deltaTime);
+                CurrentDistance += Mathf.Abs(Vector3.Distance(lastPosition, transform.position));
+                Debug.Log($"CurrentDistance: {CurrentDistance}, maxDistance: {MaxDistance}");
                 if (CurrentDistance > MaxDistance)
                 {
-                    NavMeshAgent.isStopped = true;
+                    encounterManager.StopTurn(this);
+                    walking = false;
                 }
             }
         }
@@ -84,10 +86,11 @@ namespace CodeBrewery.Glime.Battle
         /// <param name="encounterManager">A component for managing the encounter.</param>
         public void TurnStarts(EncounterManager encounterManager)
         {
+            this.encounterManager = encounterManager;
             CurrentDistance = 0;
             lastPosition = transform.position;
-            Target = encounterManager.EnemyTarget;
-            NavMeshAgent.isStopped = false;
+            target = encounterManager.EnemyTarget;
+            walking = true;
         }
     }
 }

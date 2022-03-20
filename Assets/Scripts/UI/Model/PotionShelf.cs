@@ -41,7 +41,7 @@ namespace CodeBrewery.Glime.UI.Model
                 throw new IndexOutOfRangeException($"The potion index {index} is out of bounds (number of potions: {potions.Count})");
             }
             potions[index] = potion;
-            OnPotionSetEvent.Invoke(index, potion);
+            OnPotionSetEvent?.Invoke(index, potion);
         }
 
         public void SetCurrentPotion(int index)
@@ -51,7 +51,7 @@ namespace CodeBrewery.Glime.UI.Model
                 throw new IndexOutOfRangeException($"The potion index {index} is out of bounds (number of potions: {potions.Count})");
             }
             currentPotion = index;
-            OnPotionSwitchEvent.Invoke(CurrentPotion);
+            OnPotionSwitchEvent?.Invoke(CurrentPotion);
         }
     }
 }

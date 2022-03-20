@@ -31,10 +31,12 @@ namespace CodeBrewery.Glime.Battle
         /// </summary>
         public bool BattleOngoing { get; private set; }
 
+
+        public Transform Transform;
         /// <summary>
         /// Gets or sets the target of the enemies.
         /// </summary>
-        public Vector3 EnemyTarget { get; set; }
+        public Vector3 EnemyTarget => Transform.position;
 
         /// <summary>
         /// Gets or sets the number of enemies.
@@ -99,7 +101,8 @@ namespace CodeBrewery.Glime.Battle
 
         public void StopTurn(Enemy enemy)
         {
-            enemiesCurrentlyInTurn.Remove(enemy);
+            Debug.Log("remeoved enemy: " + enemiesCurrentlyInTurn.Remove(enemy));
+            Debug.Log("missing end turns from " + enemiesCurrentlyInTurn.Count);
             if(enemiesCurrentlyInTurn.Count == 0)
             {
                 TurnCount++;
