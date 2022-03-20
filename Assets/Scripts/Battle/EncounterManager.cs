@@ -16,7 +16,7 @@ namespace CodeBrewery.Glime.Battle
         /// The enemies which might spawn during the encounter.
         /// </summary>
         [SerializeField]
-        private GameObject[] enemies;
+        private GameObject[] enemyCandidates;
 
         /// <summary>
         /// The location the enemies should walk to.
@@ -37,7 +37,7 @@ namespace CodeBrewery.Glime.Battle
         /// <summary>
         /// Gets the enemies participating in the encounter.
         /// </summary>
-        public GameObject[] Enemies => enemies;
+        public GameObject[] EnemyCandidates => enemyCandidates;
 
         /// <summary>
         /// The enemies which are pending to finish their turn.
@@ -140,7 +140,7 @@ namespace CodeBrewery.Glime.Battle
                 float vY = nextFloat(0.0f, 3.0f);
 
                 Enemy enemy = Instantiate(
-                        Enemies[rand.Next(EnemyCandidates.Length)],
+                        EnemyCandidates[rand.Next(EnemyCandidates.Length)],
                         new Vector3(x: location.x + vX, y: location.y + vY, z: location.z),
                         Transform.rotation).GetComponent<Enemy>();
 
@@ -155,6 +155,7 @@ namespace CodeBrewery.Glime.Battle
         {
             Debug.Log("removed enemy: " + enemiesCurrentlyInTurn.Remove(enemy));
             Debug.Log("missing end turns from " + enemiesCurrentlyInTurn.Count);
+
             if (enemiesCurrentlyInTurn.Count == 0)
             {
                 TurnCount++;
