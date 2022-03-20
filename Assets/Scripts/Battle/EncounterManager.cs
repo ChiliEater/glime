@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
 
 namespace CodeBrewery.Glime.Battle
 {
@@ -12,9 +13,26 @@ namespace CodeBrewery.Glime.Battle
     public class EncounterManager : MonoBehaviour
     {
         /// <summary>
+        /// The enemies which might spawn during the encounter.
+        /// </summary>
+        [SerializeField]
+        private GameObject[] enemies;
+
+        /// <summary>
+        /// The location the enemies should walk to.
+        /// </summary>
+        [SerializeField]
+        private Vector3 enemyTarget;
+
+        /// <summary>
+        /// The transformation of the game-object.
+        /// </summary>
+        private new Transform transform = null;
+
+        /// <summary>
         /// Gets or sets the instance of the player.
         /// </summary>
-        Participant Player { get; set; }
+        public Participant Player { get; set; }
 
         /// <summary>
         /// Gets the enemies participating in the encounter.
@@ -31,12 +49,26 @@ namespace CodeBrewery.Glime.Battle
         /// </summary>
         public bool BattleOngoing { get; private set; }
 
-
-        public Transform Transform;
         /// <summary>
         /// Gets or sets the target of the enemies.
         /// </summary>
-        public Vector3 EnemyTarget => Transform.position;
+        public Vector3 EnemyTarget => enemyTarget;
+
+        /// <summary>
+        /// Gets the location of the object.
+        /// </summary>
+        public Transform Transform
+        {
+            get
+            {
+                if (transform == null)
+                {
+                    transform = GetComponent<Transform>();
+                }
+
+                return transform;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the number of enemies.
@@ -65,15 +97,16 @@ namespace CodeBrewery.Glime.Battle
         /// </summary>
         public int BattleTimeSeconds => Mathf.FloorToInt(BattleTime.Seconds);
 
-        public int TurnCount {get; private set;} = 1;
+        /// <summary>
+        /// The number of turns which were played so far.
+        /// </summary>
+        public int TurnCount { get; private set; } = 1;
 
         /// <summary>
         /// Handles the initialization.
         /// </summary>
         public void Start()
-        {
-            Enemies = GetComponentsInChildren<Enemy>();
-        }
+        { }
 
         /// <summary>
         /// Handles updates prior to each frame.
@@ -82,28 +115,43 @@ namespace CodeBrewery.Glime.Battle
         {
             if (BattleOngoing)
             {
-                BattleTime +=  TimeSpan.FromSeconds(Time.deltaTime);
+                BattleTime += TimeSpan.FromSeconds(Time.deltaTime);
             }
         }
 
-        public void StartTurn(List<Potion> potions )
+        public void StartTurn(List<Potion> potions)
         {
+            var rand = new System.Random();
+            int enemyCount = Mathf.Max(1 + ((TurnCount ^ 2) / 10), 100);
+            Vector3 location = Transform.position;
+            enemiesCurrentlyInTurn.Clear();
             OnTurnStartEvent.Invoke(TurnCount, potions);
             BattleOngoing = true;
-            enemiesCurrentlyInTurn.Clear();
-            enemiesCurrentlyInTurn.AddRange(Enemies);
-            foreach (var enemy in Enemies)
+
+            for (int i = 0; i < enemyCount; i++)
             {
-                enemy.TurnStarts(this);
-                enemy.gameObject.SetActive(true);
+                Func<float, float, float> nextFloat = (float min, float max) =>
+                {
+                    System.Random random = new System.Random();
+                    double val = (random.NextDouble() * (max - min) + min);
+                    return (float)val;
+                };
+
+                float vX = nextFloat(-3.0f, 3.0f);
+                float vY = nextFloat(0.0f, 3.0f);
+                enemiesCurrentlyInTurn.Add(
+                    Instantiate(
+                        Enemies[rand.Next(Enemies.Length)],
+                        new Vector3(x: location.x + vX, y: location.y + vY, z: location.z),
+                        Transform.rotation));
             }
         }
 
         public void StopTurn(Enemy enemy)
         {
-            Debug.Log("remeoved enemy: " + enemiesCurrentlyInTurn.Remove(enemy));
+            Debug.Log("removed enemy: " + enemiesCurrentlyInTurn.Remove(enemy));
             Debug.Log("missing end turns from " + enemiesCurrentlyInTurn.Count);
-            if(enemiesCurrentlyInTurn.Count == 0)
+            if (enemiesCurrentlyInTurn.Count == 0)
             {
                 TurnCount++;
                 BattleOngoing = false;
