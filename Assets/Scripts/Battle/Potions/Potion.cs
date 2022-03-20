@@ -25,6 +25,8 @@ namespace CodeBrewery.Glime.Battle.Potions
             {
                 if (name == null)
                 {
+                    ReadonlyPotionTypeSet normalized = PotionTypes.Normalized;
+                    name = "Unnamed Potion";
                 }
 
                 return name;
