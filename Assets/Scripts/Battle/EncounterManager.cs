@@ -48,17 +48,17 @@ namespace CodeBrewery.Glime.Battle
         /// <summary>
         /// Gets the time which passed during the battle.
         /// </summary>
-        public float battleTime;
+        public TimeSpan BattleTime { get; private set; }
 
         /// <summary>
         /// Gets the number of minutes which passed during the battle.
         /// </summary>
-        public int BattleTimeMinute => Mathf.FloorToInt(battleTime / 60);
+        public int BattleTimeMinutes => Mathf.FloorToInt(BattleTime.Minutes);
 
         /// <summary>
         /// Gets the number of seconds in the current minute which passed during the battle.
         /// </summary>
-        public int BattleTimeSeconds => Mathf.FloorToInt(battleTime % 60);
+        public int BattleTimeSeconds => Mathf.FloorToInt(BattleTime.Seconds);
 
         /// <summary>
         /// Handles the initialization.
@@ -75,7 +75,7 @@ namespace CodeBrewery.Glime.Battle
         {
             if (BattleOngoing)
             {
-                battleTime += Time.deltaTime;
+                BattleTime +=  TimeSpan.FromSeconds(Time.deltaTime);
             }
         }
 
