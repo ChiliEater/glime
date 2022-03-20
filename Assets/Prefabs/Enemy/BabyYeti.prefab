@@ -143,8 +143,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 5
   attack: 1
-  type: 
-  Speed: 0
+  type: 0000000005000000
+  Speed: 2
+  MaxDistance: 0
 --- !u!61 &8699564188033048202
 BoxCollider2D:
   m_ObjectHideFlags: 0

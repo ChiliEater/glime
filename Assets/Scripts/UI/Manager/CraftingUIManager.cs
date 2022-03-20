@@ -23,6 +23,7 @@ namespace CodeBrewery.Glime.UI.Manager
         public TextMeshProUGUI PotionIngredientsLabel;
 
         private IngredientCraftingModel model = new IngredientCraftingModel(MAX_POTIONS);
+        public IngredientCraftingModel Model => model;
 
         private PotionIngredientsModel currentPotion => model.CurrentPotion;
 

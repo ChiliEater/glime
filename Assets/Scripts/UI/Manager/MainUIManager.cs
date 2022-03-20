@@ -39,6 +39,7 @@ namespace CodeBrewery.Glime.UI.Manager
         {
             CraftingUI.gameObject.SetActive(false);
             CombatUI.gameObject.SetActive(true);
+            CombatUI.UpdatePotionLabels();
         }
 
     }
