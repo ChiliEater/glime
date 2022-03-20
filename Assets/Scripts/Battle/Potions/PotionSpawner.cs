@@ -13,6 +13,7 @@ namespace CodeBrewery.Glime.Battle.Potions
         public void OnPointerUp(PointerEventData eventData)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(eventData.position);
+              mousePos.z = 7;
             Instantiate(PotionCollider, mousePos, Quaternion.identity, transform);
         }
 
