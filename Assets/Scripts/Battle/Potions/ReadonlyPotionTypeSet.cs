@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace CodeBrewery.Glime.Battle
+namespace CodeBrewery.Glime.Battle.Potions
 {
     /// <summary>
     /// Represents a recipe.
@@ -12,7 +11,7 @@ namespace CodeBrewery.Glime.Battle
         /// <summary>
         /// The actual recipe list.
         /// </summary>
-        private Dictionary<PotionType, int> innerList = new Dictionary<PotionType, int>();
+        private PotionTypeSet innerList = new PotionTypeSet();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReadonlyPotionTypeSet"/> class.
@@ -33,7 +32,7 @@ namespace CodeBrewery.Glime.Battle
         }
 
         /// <inheritdoc/>
-        public int this[PotionType key] => this.GetValueOrDefault(key, 0);
+        public virtual int this[PotionType key] => this.GetValueOrDefault(key, 0);
 
         /// <inheritdoc/>
         public IEnumerable<PotionType> Keys => InnerList.Keys;
@@ -47,12 +46,17 @@ namespace CodeBrewery.Glime.Battle
         /// <summary>
         /// Gets the total amount of ingredients.
         /// </summary>
-        public int TotalAmount => this.Sum((entry) => entry.Value);
+        public int TotalAmount => InnerList.TotalAmount;
+
+        /// <summary>
+        /// Gets the normalized set.
+        /// </summary>
+        public ReadonlyPotionTypeSet Normalized => InnerList.Normalized;
 
         /// <summary>
         /// Gets the actual recipe list.
         /// </summary>
-        protected IDictionary<PotionType, int> InnerList => innerList;
+        protected PotionTypeSet InnerList => innerList;
 
         /// <inheritdoc/>
         public bool ContainsKey(PotionType key)
