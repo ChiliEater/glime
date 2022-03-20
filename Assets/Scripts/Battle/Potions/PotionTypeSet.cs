@@ -48,11 +48,12 @@ namespace CodeBrewery.Glime.Battle.Potions
         {
             get
             {
+                ReadonlyPotionTypeSet source = ToReadonly();
                 PotionTypeSet result = new PotionTypeSet();
 
                 foreach (PotionType type in new[] { PotionType.Electric, PotionType.Healing })
                 {
-                    result[type] = this[type];
+                    result[type] = source[type];
                 }
 
                 foreach (
@@ -62,9 +63,9 @@ namespace CodeBrewery.Glime.Battle.Potions
                         (PotionType.Strength, PotionType.Weakness)
                         })
                 {
-                    if (this[entry.Item1] > 0 && this[entry.Item2] > 0)
+                    if (source[entry.Item1] > 0 && source[entry.Item2] > 0)
                     {
-                        int difference = this[entry.Item1] - this[entry.Item2];
+                        int difference = source[entry.Item1] - source[entry.Item2];
                         result[entry.Item1] = 0;
                         result[entry.Item2] = 0;
 
@@ -74,12 +75,12 @@ namespace CodeBrewery.Glime.Battle.Potions
                         }
                         else
                         {
-                            result[entry.Item2] = difference;
+                            result[entry.Item2] = -difference;
                         }
                     }
                 }
 
-                return result.ToReadonly();
+                return new ReadonlyPotionTypeSet(result.Where((entry) => entry.Value > 0));
             }
         }
 
