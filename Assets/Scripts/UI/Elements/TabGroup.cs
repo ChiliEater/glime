@@ -13,7 +13,7 @@ namespace CodeBrewery.Glime.UI.Element
         public List<ManagedTab> Tabs;
 
         public int CurrentTabIndex { get; private set; } = 0;
-        public ManagedTab CurrentTab => Tabs.FirstOrDefault();
+        public ManagedTab CurrentTab => Tabs.ElementAtOrDefault(CurrentTabIndex);
 
         public UnityEvent<TabGroup> OnTabChanged;
 
