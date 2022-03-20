@@ -122,7 +122,7 @@ namespace CodeBrewery.Glime.Battle
         public void StartTurn(List<Potion> potions)
         {
             var rand = new System.Random();
-            int enemyCount = Mathf.Max(1 + ((TurnCount ^ 2) / 10), 100);
+            int enemyCount = Mathf.Min(1 + ((TurnCount ^ 2) / 10), 100);
             Vector3 location = Transform.position;
             enemiesCurrentlyInTurn.Clear();
             BattleOngoing = true;
