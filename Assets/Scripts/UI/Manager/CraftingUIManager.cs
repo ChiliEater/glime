@@ -66,7 +66,7 @@ namespace CodeBrewery.Glime.UI.Manager
             string description = "Description:" + Environment.NewLine;
             description += string.Join(
                 Environment.NewLine,
-                from entry in potion.PotionTypes
+                from entry in potion.PotionTypes.Normalized
                 select $"- {entry.Value:00}x {entry.Key}");
 
             PotionDescriptionlabel.text = description;
