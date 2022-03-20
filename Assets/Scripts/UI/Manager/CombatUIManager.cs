@@ -2,12 +2,18 @@ using CodeBrewery.Glime.Battle.Potions;
 using CodeBrewery.Glime.UI.Element;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace CodeBrewery.Glime.UI.Manager {
     public class CombatUIManager : UIBehaviour
     {
-        private List<Potion> potions = new List<Potion>();
+
+        public TextMeshProUGUI PotionNameLabel;
+        public TextMeshProUGUI PotionDescriptionlabel;
+        public TextMeshProUGUI PotionIngredientsLabel;
+
+
         void Start()
         {
             MainUIManager.EncounterManager.OnTurnStartEvent.AddListener(TurnStartHandler);
@@ -21,7 +27,7 @@ namespace CodeBrewery.Glime.UI.Manager {
 
         public void PotionSelectHandler(TabGroup tabGroup)
         {
-
+            PotionShelf.SetCurrentPotion(tabGroup.CurrentTabIndex);
         }
 
     }

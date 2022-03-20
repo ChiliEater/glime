@@ -59,6 +59,7 @@ namespace CodeBrewery.Glime.UI.Manager
         private void UpdatePotionLabels()
         {
             Potion potion = currentPotion.CreatePotion();
+            PotionShelf.SetPotion(model.CurrentPotionIndex, potion);
             PotionNameLabel.text = potion.Name;
 
             string description = "Description:" + Environment.NewLine;

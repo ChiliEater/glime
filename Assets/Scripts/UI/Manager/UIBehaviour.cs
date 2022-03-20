@@ -1,3 +1,4 @@
+using CodeBrewery.Glime.UI.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace CodeBrewery.Glime.UI.Manager
         protected CraftingUIManager CraftingUI => MainUIManager.CraftingUI;
         protected CombatUIManager CombatUI => MainUIManager.CombatUI;
 
+        protected PotionShelf PotionShelf => MainUIManager.PotionShelf;
 
     }
 }

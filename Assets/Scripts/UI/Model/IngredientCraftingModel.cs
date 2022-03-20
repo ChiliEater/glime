@@ -12,9 +12,9 @@ namespace CodeBrewery.Glime.UI.Model
         private List<PotionIngredientsModel> potionIngredientModelList = new List<PotionIngredientsModel>();
         public IReadOnlyList<PotionIngredientsModel> PotionIngredientModels => potionIngredientModelList;
 
-        public int CurrentPosion {get; private set;}
+        public int CurrentPotionIndex {get; private set;}
 
-        public PotionIngredientsModel CurrentPotion  => potionIngredientModelList[CurrentPosion];
+        public PotionIngredientsModel CurrentPotion  => potionIngredientModelList[CurrentPotionIndex];
 
         public IngredientCraftingModel(int numberOfPotions)
         {
@@ -27,7 +27,7 @@ namespace CodeBrewery.Glime.UI.Model
             if(index < 0 || index > potionIngredientModelList.Count) {
                 throw new IndexOutOfRangeException($"Index {index} is out of range (number of potions: {potionIngredientModelList.Count})");
             }
-            CurrentPosion = index;
+            CurrentPotionIndex = index;
         }
 
 
@@ -39,6 +39,9 @@ namespace CodeBrewery.Glime.UI.Model
                 if(potionIngredients.Count > 0)
                 {
                     potions.Add(potionIngredients.CreatePotion());
+                } else
+                {
+                    potions.Add(Potion.EMPTY_POTION);
                 }
             }
             return potions;

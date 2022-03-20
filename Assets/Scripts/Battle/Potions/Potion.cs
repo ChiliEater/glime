@@ -5,6 +5,7 @@ namespace CodeBrewery.Glime.Battle.Potions
     /// </summary>
     public class Potion
     {
+        public static readonly Potion EMPTY_POTION = new Potion(new ReadonlyPotionTypeSet());
         /// <summary>
         /// The name of the potion.
         /// </summary>

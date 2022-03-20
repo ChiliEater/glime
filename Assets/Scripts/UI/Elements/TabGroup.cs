@@ -9,7 +9,7 @@ namespace CodeBrewery.Glime.UI.Element
 {
     public class TabGroup : MonoBehaviour
     {
-        public List<ManagedTab> Tabs { get; } = new List<ManagedTab>();
+        public List<ManagedTab> Tabs;
 
         public int CurrentTabIndex { get; private set; } = 0;
         public ManagedTab CurrentTab => Tabs[CurrentTabIndex];
@@ -18,7 +18,6 @@ namespace CodeBrewery.Glime.UI.Element
 
         void Start()
         {
-            Tabs.AddRange(GetComponentsInChildren<Tab>());
         }
 
         public void ActivateTab(ManagedTab tab)
@@ -59,22 +58,24 @@ namespace CodeBrewery.Glime.UI.Element
             public Sprite UntoggledSprite;
             public Sprite ToggledSprite;
             private Image image;
-            private TabGroup tabGroup;
+            public TabGroup TabGroup;
 
-            public bool IsTabActivated => tabGroup.CurrentTab == this;
+            public bool IsTabActivated => TabGroup.CurrentTab == this;
 
-            private void Start()
+            public int TabIndex => TabGroup.Tabs.IndexOf(this);
+
+
+            void Start()
             {
                 image = GetComponent<Image>();
-                tabGroup = GetComponentInParent<TabGroup>();
-                if (tabGroup == null) {
+                if (TabGroup == null) {
                     throw new System.Exception($"No tab group found for tab {gameObject.GetPath()}");
                 }
             }
 
             public void ActivateTab()
             {
-                tabGroup.ActivateTab(this);
+                TabGroup.ActivateTab(this);
             }
 
             void IManagedTab.OnTabActivated()

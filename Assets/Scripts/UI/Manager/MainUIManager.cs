@@ -1,5 +1,6 @@
 using CodeBrewery.Glime.Battle;
 using CodeBrewery.Glime.Battle.Potions;
+using CodeBrewery.Glime.UI.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace CodeBrewery.Glime.UI.Manager
         public CraftingUIManager CraftingUI;
         public CombatUIManager CombatUI;
         public EncounterManager EncounterManager;
-
+        public PotionShelf PotionShelf { get; } = new PotionShelf(3);
         void Start()
         {
             SwitchToCraftingUI();
