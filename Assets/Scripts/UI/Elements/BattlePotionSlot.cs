@@ -25,7 +25,7 @@ namespace CodeBrewery.Glime.UI.Element
         {
             if(index == tab.TabIndex)
             {
-                if(potion == Potion.EMPTY_POTION)
+                if(potion.PotionTypes.TotalAmount == 0)
                 {
                     ShowEmptyBottle();
                 } else
