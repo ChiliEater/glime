@@ -40,7 +40,7 @@
   - skeleton (undead, hellish)
     - revenant (undead, hellish) - drawn
     - ice skeleton (undead, ice) - drawn
-    - juvenile skeleton (undead, agile)
+    - floating skeleton (undead, agile) -drawn
     - Hardened skeleton (undead, tank) - drawn
   - Polar Bear (living, ice, tank)
   - KILLLER ROOMBA (conductive, CHAINSAW)
