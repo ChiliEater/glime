@@ -91,8 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8236f0d0a8ba24f9f6732e40a14658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsInitialSelection: 0
   UntoggledSprite: {fileID: 1971259686, guid: c019acc0f73bda74e83d135b6e706ef8, type: 3}
-  ToggledSprite: {fileID: -390160264, guid: c019acc0f73bda74e83d135b6e706ef8, type: 3}
+  ToggledSprite: {fileID: -366102512, guid: 44bbf2224d15c23449dce690768bfeb5, type: 3}
+  TabGroup: {fileID: 0}
 --- !u!114 &3611240903819231359
 MonoBehaviour:
   m_ObjectHideFlags: 0

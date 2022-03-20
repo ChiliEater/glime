@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace CodeBrewery.Glime.UI.Element
         public List<ManagedTab> Tabs;
 
         public int CurrentTabIndex { get; private set; } = 0;
-        public ManagedTab CurrentTab => Tabs[CurrentTabIndex];
+        public ManagedTab CurrentTab => Tabs.FirstOrDefault();
 
         public UnityEvent<TabGroup> OnTabChanged;
 
@@ -55,6 +56,7 @@ namespace CodeBrewery.Glime.UI.Element
         [RequireComponent(typeof(Image))]
         public class ManagedTab : MonoBehaviour, IManagedTab
         {
+            public bool IsInitialSelection;
             public Sprite UntoggledSprite;
             public Sprite ToggledSprite;
             private Image image;
@@ -70,6 +72,10 @@ namespace CodeBrewery.Glime.UI.Element
                 image = GetComponent<Image>();
                 if (TabGroup == null) {
                     throw new System.Exception($"No tab group found for tab {gameObject.GetPath()}");
+                }
+                if(IsInitialSelection)
+                {
+                    ((IManagedTab) this).OnTabActivated();
                 }
             }
 
