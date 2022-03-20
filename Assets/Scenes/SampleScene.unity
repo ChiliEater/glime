@@ -617,6 +617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BabyYeti2
       objectReference: {fileID: 0}
+    - target: {fileID: 8149441353386540619, guid: 4fca5649dc149be448a8b7ada750997f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fca5649dc149be448a8b7ada750997f, type: 3}
 --- !u!4 &322587821 stripped
@@ -2501,6 +2505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BabyYeti
       objectReference: {fileID: 0}
+    - target: {fileID: 8149441353386540619, guid: 4fca5649dc149be448a8b7ada750997f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fca5649dc149be448a8b7ada750997f, type: 3}
 --- !u!4 &1644217948 stripped
@@ -2922,6 +2930,10 @@ PrefabInstance:
     - target: {fileID: 8149441353386540619, guid: 37738c300df28c046aabfcaad88c3002, type: 3}
       propertyPath: m_Name
       value: Yeti
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149441353386540619, guid: 37738c300df28c046aabfcaad88c3002, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37738c300df28c046aabfcaad88c3002, type: 3}

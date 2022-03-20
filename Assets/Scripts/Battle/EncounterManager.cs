@@ -33,6 +33,7 @@ namespace CodeBrewery.Glime.Battle
             foreach (var enemy in Enemies)
             {
                 enemy.TurnStarts(this);
+                enemy.gameObject.SetActive(true);
             }
         }
 
