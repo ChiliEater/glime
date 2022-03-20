@@ -37,7 +37,7 @@ namespace CodeBrewery.Glime.Battle
         /// <summary>
         /// Gets the enemies participating in the encounter.
         /// </summary>
-        public Enemy[] Enemies { get; private set; }
+        public GameObject[] Enemies => enemies;
 
         /// <summary>
         /// The enemies which are pending to finish their turn.
@@ -125,7 +125,6 @@ namespace CodeBrewery.Glime.Battle
             int enemyCount = Mathf.Max(1 + ((TurnCount ^ 2) / 10), 100);
             Vector3 location = Transform.position;
             enemiesCurrentlyInTurn.Clear();
-            OnTurnStartEvent.Invoke(TurnCount, potions);
             BattleOngoing = true;
 
             for (int i = 0; i < enemyCount; i++)
@@ -143,8 +142,10 @@ namespace CodeBrewery.Glime.Battle
                     Instantiate(
                         Enemies[rand.Next(Enemies.Length)],
                         new Vector3(x: location.x + vX, y: location.y + vY, z: location.z),
-                        Transform.rotation));
+                        Transform.rotation).GetComponent<Enemy>());
             }
+
+            OnTurnStartEvent.Invoke(TurnCount, potions);
         }
 
         public void StopTurn(Enemy enemy)
