@@ -8,7 +8,7 @@ namespace CodeBrewery.Glime.UI.Model
 {
     public class PotionShelf
     {
-        private int currentPotion = 0;
+        public int CurrentPotionIndex { get; private set} = 0;
         private List<Potion> potions = new List<Potion>();
         public IReadOnlyList<Potion> Potions => potions;
 
@@ -20,8 +20,8 @@ namespace CodeBrewery.Glime.UI.Model
         public Potion CurrentPotion {
             get
             {
-                if (currentPotion < 0 || currentPotion >= potions.Count) return null;
-                return potions[currentPotion];
+                if (CurrentPotionIndex < 0 || CurrentPotionIndex >= potions.Count) return null;
+                return potions[CurrentPotionIndex];
             }
         }
 
@@ -50,7 +50,7 @@ namespace CodeBrewery.Glime.UI.Model
             {
                 throw new IndexOutOfRangeException($"The potion index {index} is out of bounds (number of potions: {potions.Count})");
             }
-            currentPotion = index;
+            CurrentPotionIndex = index;
             OnPotionSwitchEvent?.Invoke(CurrentPotion);
         }
     }
