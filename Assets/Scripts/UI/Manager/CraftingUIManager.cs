@@ -18,9 +18,6 @@ namespace CodeBrewery.Glime.UI.Manager
         public static readonly int MAX_INGREDIENTS = 3;
         private EncounterManager encounterManager;
 
-        public TextMeshProUGUI MinuteLabel;
-        public TextMeshProUGUI SecondLabel;
-
         public TextMeshProUGUI PotionNameLabel;
         public TextMeshProUGUI PotionDescriptionlabel;
         public TextMeshProUGUI PotionIngredientsLabel;
@@ -32,15 +29,12 @@ namespace CodeBrewery.Glime.UI.Manager
         void Start()
         {
             encounterManager = MainUIManager.EncounterManager;
-            UpdateBattleTime();
         }
 
-
-        private void UpdateBattleTime()
-        {
-            MinuteLabel.text = encounterManager.BattleTimeMinutes.ToString("00");
-            SecondLabel.text = encounterManager.BattleTimeSeconds.ToString("00");
+        public void StartTurn() {
+            MainUIManager.StartTurn();
         }
+
 
         public void ActivatePotion(TabGroup group) {
             model.ActivatePosion(group.CurrentTabIndex);
@@ -80,9 +74,5 @@ namespace CodeBrewery.Glime.UI.Manager
             PotionIngredientsLabel.text = ingredients;
         }
 
-        public void StartTurn()
-        {
-            encounterManager.StartTurn();
-        }
     }
 }

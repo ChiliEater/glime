@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 191285773858063170}
   - component: {fileID: 8211453707134699774}
-  - component: {fileID: -9097222541050261739}
   - component: {fileID: 5325128107154899681}
+  - component: {fileID: -2650686393759569522}
+  - component: {fileID: 3611240903819231359}
   m_Layer: 0
-  m_Name: Button
+  m_Name: BattleTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 462266202, guid: c019acc0f73bda74e83d135b6e706ef8, type: 3}
+  m_Sprite: {fileID: -1293342167, guid: 44bbf2224d15c23449dce690768bfeb5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -69,7 +70,29 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-9097222541050261739
+--- !u!222 &5325128107154899681
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204927860828866815}
+  m_CullTransparentMesh: 1
+--- !u!114 &-2650686393759569522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204927860828866815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a8236f0d0a8ba24f9f6732e40a14658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UntoggledSprite: {fileID: -1126377105, guid: 44bbf2224d15c23449dce690768bfeb5, type: 3}
+  ToggledSprite: {fileID: -390160264, guid: c019acc0f73bda74e83d135b6e706ef8, type: 3}
+--- !u!114 &3611240903819231359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +111,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -112,12 +135,17 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8211453707134699774}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!222 &5325128107154899681
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204927860828866815}
-  m_CullTransparentMesh: 1
+      m_Calls:
+      - m_Target: {fileID: -2650686393759569522}
+        m_TargetAssemblyTypeName: CodeBrewery.Glime.UI.Element.TabGroup+ManagedTab,
+          Assembly-CSharp
+        m_MethodName: ActivateTab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

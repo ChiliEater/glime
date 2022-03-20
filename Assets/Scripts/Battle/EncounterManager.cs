@@ -50,6 +50,8 @@ namespace CodeBrewery.Glime.Battle
         /// </summary>
         public TimeSpan BattleTime { get; private set; }
 
+        public UnityEvent<int> OnTurnStartEvent;
+
         /// <summary>
         /// Gets the number of minutes which passed during the battle.
         /// </summary>
@@ -59,6 +61,8 @@ namespace CodeBrewery.Glime.Battle
         /// Gets the number of seconds in the current minute which passed during the battle.
         /// </summary>
         public int BattleTimeSeconds => Mathf.FloorToInt(BattleTime.Seconds);
+
+        public int TurnCount {get; private set;} = 1;
 
         /// <summary>
         /// Handles the initialization.
@@ -81,6 +85,7 @@ namespace CodeBrewery.Glime.Battle
 
         public void StartTurn()
         {
+            OnTurnStartEvent.Invoke(TurnCount);
             BattleOngoing = true;
             enemiesCurrentlyInTurn.Clear();
             enemiesCurrentlyInTurn.AddRange(Enemies);
@@ -96,6 +101,7 @@ namespace CodeBrewery.Glime.Battle
             enemiesCurrentlyInTurn.Remove(enemy);
             if(enemiesCurrentlyInTurn.Count == 0)
             {
+                TurnCount++;
                 BattleOngoing = false;
                 OnTurnStoppedEvent.Invoke();
             }

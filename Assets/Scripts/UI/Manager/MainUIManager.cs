@@ -16,13 +16,21 @@ namespace CodeBrewery.Glime.UI.Manager
 
         void Start()
         {
+            SwitchToCraftingUI();
         }
 
 
+        public void StartTurn() {
+            SwitchToBattleUI();
+            EncounterManager.StartTurn();
+        }
+
         public void SwitchToCraftingUI()
         {
-            CraftingUI.gameObject.SetActive(true);
-            CombatUI.gameObject.SetActive(false);
+            if(!EncounterManager.BattleOngoing) {
+                CraftingUI.gameObject.SetActive(true);
+                CombatUI.gameObject.SetActive(false);
+            }
         }
 
         public void SwitchToBattleUI()

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2650686393759569522}
   - component: {fileID: 3611240903819231359}
   m_Layer: 0
-  m_Name: Tab
+  m_Name: CraftingTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
